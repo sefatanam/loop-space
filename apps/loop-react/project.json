@@ -1,0 +1,9 @@
+{
+  "name": "loop-react",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/loop-react/src",
+  "projectType": "application",
+  "tags": [],
+  "// targets": "to see all targets run: nx show project loop-react --web",
+  "targets": {}
+}
