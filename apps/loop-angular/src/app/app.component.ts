@@ -1,13 +1,26 @@
-import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { NxWelcomeComponent } from './nx-welcome.component';
+import { Component, signal } from "@angular/core";
+import { RouterModule } from "@angular/router";
 
 @Component({
-  imports: [NxWelcomeComponent, RouterModule],
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css',
+	imports: [RouterModule],
+	selector: "app-root",
+	templateUrl: "./app.component.html",
+	styleUrl: "./app.component.css",
 })
 export class AppComponent {
-  title = 'loop-angular';
+	showFlyOutMenu = signal(true);
+	toggleFlyOutMenu() {
+		this.showFlyOutMenu.update((prev) => !prev);
+	}
+
+	appRoutes = [
+		{
+			url: "animations",
+			name: "Animations",
+		},
+		{
+			url: "directives",
+			name: "Directives",
+		},
+	] as const;
 }
