@@ -1,11 +1,10 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { BasicComponent } from "@loop-space/ng-animations";
+import { Component } from "@angular/core";
+import { CommonModule } from "@angular/common";
 
 @Component({
-  selector: 'app-animation',
-  imports: [CommonModule, BasicComponent],
-  templateUrl: './animation.component.html',
-  styles: ``,
+	selector: "app-animation",
+	imports: [CommonModule],
+	templateUrl: "./animation.component.html",
+	styles: ``,
 })
-export class AnimationComponent { }
+export class AnimationComponent {}
