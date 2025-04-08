@@ -14,7 +14,7 @@ This is not a production-ready project — it's a **raw practice ground** where 
 ## Note
 Expect messy code and lots of WIP — this is where I break things to learn how to fix them. Feel free to clone, explore, and use as a reference if you're also diving into multi-framework development with Nx.
 
-#### Requirments
+#### Requirements
 - Node `22.14.0`
 - Nx `v20.7.1`
   > To make the nx command available globally, install nx via `npm install -g nx`.
