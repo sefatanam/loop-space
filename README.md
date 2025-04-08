@@ -17,8 +17,7 @@ Expect messy code and lots of WIP — this is where I break things to learn how 
 #### Requirments
 - Node `22.14.0`
 - Nx `v20.7.1`
-  > In order to available `nx` command globally in machine you have install nx via `npm install -g nx`
-
+  > To make the nx command available globally, install nx via `npm install -g nx`.
 ## How to
 - How to generate Apps [**Nx Plugin Registry**](https://nx.dev/plugin-registry)
 - How to generate Library 
