@@ -6,6 +6,9 @@ export const appRoutes: Routes = [
 		loadComponent: () =>
 			import("./nx-welcome.component").then((c) => c.NxWelcomeComponent),
 	},
+	{
+		path: "h",
+	}
 ];
 
 export default appRoutes;
