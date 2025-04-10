@@ -1,2 +1,8 @@
-<app-nx-welcome></app-nx-welcome>
-<router-outlet></router-outlet>
+<nav>
+  <ul>
+    @for(navItem of navItems;track $index){
+    <li [routerLink]="navItem.url">{{ navItem.title }}</li>
+    }
+  </ul>
+</nav>
+<router-outlet />

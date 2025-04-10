@@ -1,23 +1,26 @@
 {
-	"compileOnSave": false,
-	"compilerOptions": {
-		"rootDir": ".",
-		"sourceMap": true,
-		"declaration": false,
-		"moduleResolution": "node",
-		"emitDecoratorMetadata": true,
-		"experimentalDecorators": true,
-		"importHelpers": true,
-		"target": "es2015",
-		"module": "esnext",
-		"lib": ["es2020", "dom"],
-		"skipLibCheck": true,
-		"skipDefaultLibCheck": true,
-		"baseUrl": ".",
-		"paths": {
-			"@sandbox/angular-directives/*": ["sandbox/angular-directives/src/app/*"],
-			"@sandbox/angular-animations/*": ["sandbox/angular-animations/src/app/*"]
-		}
-	},
-	"exclude": ["node_modules", "tmp"]
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2020", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@loop-space/animations": ["libs/angular/animations/src/index.ts"],
+      "@loop-space/directives": ["libs/angular/directives/src/index.ts"],
+      "@loop-space/utils": ["libs/angular/utils/src/index.ts"],
+      "@sandbox/angular-animations/*": ["sandbox/angular-animations/src/app/*"],
+      "@sandbox/angular-directives/*": ["sandbox/angular-directives/src/app/*"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
 }
