@@ -1,8 +1,6 @@
-<nav>
-  <ul>
-    @for(navItem of navItems;track $index){
-    <li [routerLink]="navItem.url">{{ navItem.title }}</li>
-    }
-  </ul>
+<nav class="flex flex-wrap justify-center text-lg">
+  @for(item of navItems;track $index){
+  <a libButton routerLink="{{ item.url }}">{{ item.title }}</a>
+  }
 </nav>
 <router-outlet />

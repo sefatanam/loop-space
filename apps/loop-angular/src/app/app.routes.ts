@@ -1,6 +1,9 @@
 import { Route } from "@angular/router";
+import { ExtractPaths } from "@loop-space/utils";
 
-export const appRoutes: Route[] = [
+export type LoopAngularRoutes = ExtractPaths<typeof appRoutes, "">;
+
+export const appRoutes = [
 	{
 		path: "animations",
 		// eslint-disable-next-line @nx/enforce-module-boundaries
@@ -11,4 +14,6 @@ export const appRoutes: Route[] = [
 		// eslint-disable-next-line @nx/enforce-module-boundaries
 		loadChildren: () => import("@sandbox/angular-directives/app.routes"),
 	},
-];
+] as const;
+
+export default appRoutes as unknown as Route[];

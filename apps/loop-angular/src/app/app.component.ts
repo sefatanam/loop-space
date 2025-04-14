@@ -1,19 +1,19 @@
-import { Component, signal } from "@angular/core";
+import { Component } from "@angular/core";
 import { RouterModule } from "@angular/router";
+import { NavbarComponent } from "@loop-space/shared-ui";
+import { LoopAngularRoutes } from "./app.routes";
 
 @Component({
-	imports: [RouterModule],
+	imports: [RouterModule, NavbarComponent],
 	selector: "app-root",
 	templateUrl: "./app.component.html",
 	styleUrl: "./app.component.css",
+	host: {
+		class: "block mx-auto container ",
+	},
 })
 export class AppComponent {
-	showFlyOutMenu = signal(true);
-	toggleFlyOutMenu() {
-		this.showFlyOutMenu.update((prev) => !prev);
-	}
-
-	appRoutes = [
+	appRoutes: { name: string; url: LoopAngularRoutes }[] = [
 		{
 			url: "animations",
 			name: "Animations",
@@ -22,5 +22,5 @@ export class AppComponent {
 			url: "directives",
 			name: "Directives",
 		},
-	] as const;
+	];
 }

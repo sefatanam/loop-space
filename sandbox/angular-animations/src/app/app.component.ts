@@ -1,9 +1,10 @@
 import { Component } from "@angular/core";
 import { RouterModule } from "@angular/router";
 import { NavData } from "./route-items.data";
+import { ButtonDirective } from "@loop-space/shared-ui";
 
 @Component({
-	imports: [RouterModule],
+	imports: [RouterModule, ButtonDirective],
 	selector: "app-root",
 	templateUrl: "./app.component.html",
 	styleUrl: "./app.component.css",
