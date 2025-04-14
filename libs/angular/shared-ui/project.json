@@ -8,6 +8,22 @@
   "targets": {
     "lint": {
       "executor": "@nx/eslint:lint"
+    },
+    "build": {
+      "executor": "@nx/angular:ng-packagr-lite",
+      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
+      "options": {
+        "project": "libs/angular/shared-ui/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/angular/shared-ui/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/angular/shared-ui/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
     }
   }
 }
