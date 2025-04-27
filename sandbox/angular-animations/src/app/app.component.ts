@@ -15,6 +15,10 @@ export class AppComponent {
 			url: "basic",
 			title: "Basic Animation",
 		},
+		{
+			url: "motion",
+			title: "Motion",
+		},
 		// {
 		// 	url: "enable-disable",
 		// 	title: "Enable / Disable Animation",

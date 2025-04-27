@@ -1,1 +1,1 @@
-export * from './lib/directives/directives.component';
+export * from "./lib/motion.directive";

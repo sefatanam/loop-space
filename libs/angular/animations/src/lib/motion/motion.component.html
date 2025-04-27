@@ -1,0 +1,15 @@
+<div>
+  <div>
+    <div libMotion style="overflow: hidden; background-color: #f0f0f0; padding: 10px"
+      [initial]="{ height: '0px', opacity: 0, backgroundColor: 'red' }"
+      [animate]="{ height: '200px', opacity: 1, backgroundColor: 'blue' }" [exit]="{ height: '0px', opacity: 0 }"
+      [variant]="isPanelOpen ? 'animate' : 'initial'" [duration]="'0.4s'"
+      [easing]="'cubic-bezier(0.68, -0.6, 0.32, 1.6)'">
+      <p>This is the content inside the panel!</p>
+    </div>
+
+    <button (click)="togglePanel()">
+      Toggle Panel
+    </button>
+  </div>
+</div>

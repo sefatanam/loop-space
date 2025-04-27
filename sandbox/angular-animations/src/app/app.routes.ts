@@ -1,6 +1,6 @@
 import { Routes } from "@angular/router";
 import { ExtractPaths } from "@loop-space/utils";
-import { BasicComponent } from "@loop-space/animations";
+import { BasicComponent, MotionComponent } from "@loop-space/animations";
 export type AnimationsRoutes = ExtractPaths<typeof appRoutes, "">;
 
 const appRoutes = [
@@ -11,6 +11,10 @@ const appRoutes = [
 			{
 				path: "basic",
 				component: BasicComponent,
+			},
+			{
+				path: "motion",
+				component: MotionComponent,
 			},
 		],
 	},
