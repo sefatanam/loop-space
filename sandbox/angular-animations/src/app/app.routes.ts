@@ -1,6 +1,6 @@
 import { Routes } from "@angular/router";
 import { ExtractPaths } from "@loop-space/utils";
-
+import { BasicComponent } from "@loop-space/animations";
 export type AnimationsRoutes = ExtractPaths<typeof appRoutes, "">;
 
 const appRoutes = [
@@ -8,22 +8,10 @@ const appRoutes = [
 		path: "",
 		loadComponent: () => import("./app.component").then((m) => m.AppComponent),
 		children: [
-			// {
-			// 	path: "basic",
-			// 	loadComponent: () => BasicComponent,
-			// },
-			// {
-			// 	path: "enable-disable",
-			// 	loadComponent: () => EnableDisableComponent,
-			// },
-			// {
-			// 	path: "enter-leave",
-			// 	loadComponent: () => EnterLeaveComponent,
-			// },
-			// {
-			// 	path: "keyframe",
-			// 	loadComponent: () => KeyframeComponent,
-			// },
+			{
+				path: "basic",
+				component: BasicComponent,
+			},
 		],
 	},
 ] as const;

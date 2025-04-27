@@ -11,10 +11,10 @@ import { ButtonDirective } from "@loop-space/shared-ui";
 })
 export class AppComponent {
 	navItems: Readonly<NavData[]> = [
-		// {
-		// 	url: "basic",
-		// 	title: "Basic Animation",
-		// },
+		{
+			url: "basic",
+			title: "Basic Animation",
+		},
 		// {
 		// 	url: "enable-disable",
 		// 	title: "Enable / Disable Animation",
