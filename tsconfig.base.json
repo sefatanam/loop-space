@@ -15,7 +15,6 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@loop-space/animations": ["libs/angular/animations/src/index.ts"],
       "@loop-space/directives": ["libs/angular/directives/src/index.ts"],
       "@loop-space/shared-ui": ["libs/angular/shared-ui/src/index.ts"],
       "@loop-space/utils": ["libs/angular/utils/src/index.ts"],
