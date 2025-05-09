@@ -1,0 +1,78 @@
+{
+  "name": "angular-httpResource",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "prefix": "app",
+  "sourceRoot": "sandbox/angular-httpResource//src",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:application",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/sandbox/angular-httpResource/",
+        "index": "sandbox/angular-httpResource//src/index.html",
+        "browser": "sandbox/angular-httpResource//src/main.ts",
+        "polyfills": ["zone.js"],
+        "tsConfig": "sandbox/angular-httpResource/tsconfig.app.json",
+        "assets": [
+          {
+            "glob": "**/*",
+            "input": "sandbox/angular-httpResource/public"
+          }
+        ],
+        "styles": ["sandbox/angular-httpResource//src/styles.css"],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "4kb",
+              "maximumError": "8kb"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "optimization": false,
+          "extractLicenses": false,
+          "sourceMap": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "buildTarget": "angular-httpResource:build:production"
+        },
+        "development": {
+          "buildTarget": "angular-httpResource:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "buildTarget": "angular-httpResource:build"
+      }
+    },
+    "serve-static": {
+      "executor": "@nx/web:file-server",
+      "options": {
+        "buildTarget": "angular-httpResource:build",
+        "staticFilePath": "dist/sandbox/angular-httpResource/browser",
+        "spa": true
+      }
+    }
+  }
+}

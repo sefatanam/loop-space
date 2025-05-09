@@ -14,6 +14,11 @@ export const appRoutes = [
 		// eslint-disable-next-line @nx/enforce-module-boundaries
 		loadChildren: () => import("@sandbox/angular-directives/app.routes"),
 	},
+	{
+		path: "httpResource",
+		// eslint-disable-next-line @nx/enforce-module-boundaries
+		loadChildren: () => import("@sandbox/angular-httpResource/app.routes"),
+	},
 ] as const;
 
 export default appRoutes as unknown as Route[];

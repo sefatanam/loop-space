@@ -22,5 +22,9 @@ export class AppComponent {
 			url: "directives",
 			name: "Directives",
 		},
+		{
+			url:"httpResource",
+			name: "Http Resource",
+		}
 	];
 }
