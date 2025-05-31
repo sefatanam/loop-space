@@ -1,10 +1,11 @@
 import { Component } from "@angular/core";
 import { RouterModule } from "@angular/router";
-import { NavbarComponent } from "@loop-space/shared-ui";
 import { LoopAngularRoutes } from "./app.routes";
+import { TopNavComponent } from "@loop-space/shared-ui";
+import { NavItem } from "@loop-space/utils";
 
 @Component({
-	imports: [RouterModule, NavbarComponent],
+	imports: [RouterModule, TopNavComponent],
 	selector: "app-root",
 	templateUrl: "./app.component.html",
 	styleUrl: "./app.component.css",
@@ -13,7 +14,7 @@ import { LoopAngularRoutes } from "./app.routes";
 	},
 })
 export class AppComponent {
-	appRoutes: { name: string; url: LoopAngularRoutes }[] = [
+	appRoutes: Array<NavItem<LoopAngularRoutes>> = [
 		{
 			url: "animations",
 			name: "Animations",
@@ -23,7 +24,7 @@ export class AppComponent {
 			name: "Directives",
 		},
 		{
-			url:"httpResource",
+			url: "httpResource",
 			name: "Http Resource",
 		}
 	];

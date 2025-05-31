@@ -1,6 +1,7 @@
 import { Routes } from "@angular/router";
-import { ExtractPaths } from "@loop-space/utils";
 import { BasicComponent, MotionComponent } from "@loop-space/animations";
+import { ExtractPaths } from "@loop-space/utils";
+ 
 export type AnimationsRoutes = ExtractPaths<typeof appRoutes, "">;
 
 const appRoutes = [

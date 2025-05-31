@@ -19,6 +19,11 @@ export const appRoutes = [
 		// eslint-disable-next-line @nx/enforce-module-boundaries
 		loadChildren: () => import("@sandbox/angular-httpResource/app.routes"),
 	},
+	{
+		path:'',
+		pathMatch:'full',
+		redirectTo:'animations'
+	}
 ] as const;
 
 export default appRoutes as unknown as Route[];

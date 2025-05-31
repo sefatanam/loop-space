@@ -1,6 +1,5 @@
 import { Component, signal } from "@angular/core";
 import { CommonModule, NgTemplateOutlet } from "@angular/common";
-import { ButtonDirective } from "@loop-space/shared-ui";
 import {
 	trigger,
 	state,
@@ -8,6 +7,7 @@ import {
 	animate,
 	transition,
 } from "@angular/animations";
+import { ButtonDirective } from "@loop-space/shared-ui";
 
 @Component({
 	template: `
