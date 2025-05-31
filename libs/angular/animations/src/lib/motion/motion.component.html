@@ -1,15 +1,146 @@
-<div>
-  <div>
-    <div libMotion style="overflow: hidden; background-color: #f0f0f0; padding: 10px"
-      [initial]="{ height: '0px', opacity: 0, backgroundColor: 'red' }"
-      [animate]="{ height: '200px', opacity: 1, backgroundColor: 'blue' }" [exit]="{ height: '0px', opacity: 0 }"
-      [variant]="isPanelOpen ? 'animate' : 'initial'" [duration]="'0.4s'"
-      [easing]="'cubic-bezier(0.68, -0.6, 0.32, 1.6)'">
-      <p>This is the content inside the panel!</p>
-    </div>
+<div class="container mx-auto px-4 py-8">
+  <h2 class="text-3xl font-bold text-gray-800 mb-4">Search Overlay Animation</h2>
+  <p class="text-gray-600 mb-6">This example showcases a more complex use case: animating a search overlay that drops down with a subtle shaky effect on appearance.</p>
+  <div class="mb-12 p-6 border border-gray-300 rounded-lg shadow-lg bg-white">
+    <div class="relative w-full max-w-2xl mx-auto ">
+      <!-- Search Bar -->
+      <div class="relative ">
+        <input 
+          type="text" 
+          placeholder="Search destinations..." 
+          class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          (click)="toggleSearch()"
+          [readonly]="true"
+        >
+        <div class="absolute right-3 top-1/2 -translate-y-1/2" (click)="toggleSearch()">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+        </div>
+      </div>
 
-    <button (click)="togglePanel()">
-      Toggle Panel
-    </button>
+      <!-- Overlay Search Form -->
+      <div 
+        libMotion
+        class=" absolute top-5 left-0 w-full h-min bg-white rounded-lg shadow-xl z-50"
+        [initial]="{ 
+          height: '0px', 
+          opacity: 0, 
+          transform: 'translateY(-20px) scale(0.95)',
+          transformOrigin: 'top center'
+        }"
+        [animate]="{ 
+          height:'400px',
+          opacity: 1, 
+          transform: 'translateY(0) scale(1)',
+          transformOrigin: 'top center'
+        }"
+        [exit]="{ 
+          height: '0px', 
+          opacity: 0, 
+          transform: 'translateY(-20px) scale(0.95)',
+          transformOrigin: 'top center'
+        }"
+        [variant]="isSearchOpen ? 'animate' : 'initial'"
+        [duration]="'.4s'"
+        [easing]="'cubic-bezier(0.4, 0, 0.2, 1)'"
+      >
+        <div class="bg-white p-6 top-5 rounded-md relative overflow-hidden"  [class.hidden]="!isSearchOpen" >
+          <div class="flex items-center justify-between mb-6">
+            <h2 class="text-2xl font-semibold text-gray-800">Where to?</h2>
+            <button 
+              (click)="toggleSearch()"
+              class="p-2 hover:bg-gray-100 rounded-full"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="space-y-4">
+              <label class="block text-sm font-medium text-gray-700">Location</label>
+              <input 
+                type="text" 
+                placeholder="Where are you going?"
+                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              >
+            </div>
+            <div class="space-y-4">
+              <label class="block text-sm font-medium text-gray-700">Dates</label>
+              <input 
+                type="date" 
+                placeholder="Add dates"
+                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              >
+            </div>
+            <div class="space-y-4">
+              <label class="block text-sm font-medium text-gray-700">Guests</label>
+              <input 
+                type="range" 
+                placeholder="Add guests"
+                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              >
+            </div>
+          </div>
+
+          <div class="mt-8">
+            <button class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition-colors">
+              Search
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
+<br>
+<div class="container mx-auto px-4 py-8">
+  <h2 class="text-3xl font-bold text-gray-800 mb-4">Basic Panel Animation</h2>
+  <p class="text-gray-600 mb-6">This section demonstrates a simple height and opacity animation for a collapsible panel with customizable background color.</p>
+  <div class="mb-12 p-6 border border-gray-300 rounded-lg shadow-lg bg-white">
+    <div>
+      <div libMotion style="overflow: hidden; background-color: #f0f0f0; padding: 10px"
+        [initial]="{ height: '0px', opacity: 0, backgroundColor: 'red' }"
+        [animate]="{ height: '200px', opacity: 1, backgroundColor: 'blue' }" 
+        [exit]="{ height: '0px', opacity: 0 }"
+        [variant]="isPanelOpen ? 'animate' : 'initial'" [duration]="'.5s'"
+        [easing]="'cubic-bezier(0.68, -0.6, 0.32, 1.6)'">
+        <p>This is the content inside the panel!</p>
+      </div>
+
+      <button (click)="togglePanel()">
+        Toggle Panel
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="container mx-auto px-4 py-8">
+  <h2 class="text-3xl font-bold text-gray-800 mb-4">Styled Panel with Gradient</h2>
+  <p class="text-gray-600 mb-6">Here's an example of the motion directive applied to a panel with a gradient background and a subtle scale transformation.</p>
+  <div class="mb-12 p-6 border border-gray-300 rounded-lg shadow-lg bg-white">
+    <div class="relative">
+     <div libMotion>
+         <div libMotion style="overflow: hidden; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 20px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.2)"
+           [initial]="{ height: '0px', opacity: 0, transform: 'scale(0.8)' }"
+           [animate]="{ height: '250px', opacity: 1, transform: 'scale(1)' }" 
+           [exit]="{ height: '0px', opacity: 0, transform: 'scale(0.8)' }"
+           [variant]="isWelcomeOpen ? 'animate' : 'exit'" 
+           [duration]="'.6s'"
+           [easing]="'cubic-bezier(0.4, 0, 0.2, 1)'">
+           <div class="text-center">
+             <h3 class="text-2xl font-bold text-white mb-4">Welcome!</h3>
+             <p class="text-white/90 leading-relaxed">This is a creatively styled panel with a beautiful gradient background and smooth animations.</p>
+           </div>
+         </div>
+      </div>
+
+     <button (click)="toggleWelcome()">
+        Toggle Panel
+      </button>
+    </div>
+  </div>
+</div>
+
