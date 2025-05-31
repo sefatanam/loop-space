@@ -1,3 +1,26 @@
+
+<br>
+<div class="container mx-auto px-4 py-8">
+  <h2 class="text-3xl font-bold text-gray-800 mb-4">Basic Panel Animation</h2>
+  <p class="text-gray-600 mb-6">This section demonstrates a simple height and opacity animation for a collapsible panel with customizable background color.</p>
+  <div class="mb-12 p-6 border border-gray-300 rounded-lg shadow-lg bg-white">
+    <div>
+      <div libMotion style="overflow: hidden; background-color: #f0f0f0; padding: 10px"
+        [initial]="{ height: '0px', opacity: 0, backgroundColor: 'red' }"
+        [animate]="{ height: '200px', opacity: 1, backgroundColor: 'blue' }" 
+        [exit]="{ height: '0px', opacity: 0 }"
+        [variant]="isPanelOpen ? 'animate' : 'initial'" [duration]="'.5s'"
+        [easing]="'cubic-bezier(0.68, -0.6, 0.32, 1.6)'">
+        <p>This is the content inside the panel!</p>
+      </div>
+
+      <button (click)="togglePanel()">
+        Toggle Panel
+      </button>
+    </div>
+  </div>
+</div>
+<br>
 <div class="container mx-auto px-4 py-8">
   <h2 class="text-3xl font-bold text-gray-800 mb-4">Search Overlay Animation</h2>
   <p class="text-gray-600 mb-6">This example showcases a more complex use case: animating a search overlay that drops down with a subtle shaky effect on appearance.</p>
@@ -96,27 +119,6 @@
   </div>
 </div>
 <br>
-<div class="container mx-auto px-4 py-8">
-  <h2 class="text-3xl font-bold text-gray-800 mb-4">Basic Panel Animation</h2>
-  <p class="text-gray-600 mb-6">This section demonstrates a simple height and opacity animation for a collapsible panel with customizable background color.</p>
-  <div class="mb-12 p-6 border border-gray-300 rounded-lg shadow-lg bg-white">
-    <div>
-      <div libMotion style="overflow: hidden; background-color: #f0f0f0; padding: 10px"
-        [initial]="{ height: '0px', opacity: 0, backgroundColor: 'red' }"
-        [animate]="{ height: '200px', opacity: 1, backgroundColor: 'blue' }" 
-        [exit]="{ height: '0px', opacity: 0 }"
-        [variant]="isPanelOpen ? 'animate' : 'initial'" [duration]="'.5s'"
-        [easing]="'cubic-bezier(0.68, -0.6, 0.32, 1.6)'">
-        <p>This is the content inside the panel!</p>
-      </div>
-
-      <button (click)="togglePanel()">
-        Toggle Panel
-      </button>
-    </div>
-  </div>
-</div>
-
 <div class="container mx-auto px-4 py-8">
   <h2 class="text-3xl font-bold text-gray-800 mb-4">Styled Panel with Gradient</h2>
   <p class="text-gray-600 mb-6">Here's an example of the motion directive applied to a panel with a gradient background and a subtle scale transformation.</p>
