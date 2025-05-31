@@ -28,6 +28,48 @@ Expect messy code and lots of WIP — this is where I break things to learn how 
     ```bash
     nx g @nx/workspace:remove LIBRARY_NAME
     ```
+
+### Common Nx Commands
+
+Here are some common Nx commands you might find useful:
+
+- **Generate a new application (example using React):**
+    ```bash
+    nx generate @nx/react:app my-react-app
+    ```
+
+- **Generate a new library (example using generic `@nx/js` plugin):**
+    ```bash
+    nx generate @nx/js:library my-js-lib --unitTestRunner=jest
+    ```
+
+- **Remove a library:**
+    ```bash
+    nx generate @nx/workspace:remove LIBRARY_NAME
+    ```
+
+- **Upgrade Nx to the latest version:**
+    ```bash
+    nx migrate latest
+    ```
+    *Follow the instructions in the terminal after running this command.*
+
+- **Run migrations after upgrading Nx:**
+    ```bash
+    nx migrate --run-migrations
+    ```
+
+- **Add a package to a specific project's package.json (example adding `lodash` to `my-js-lib`):**
+    ```bash
+    nx generate @nx/workspace:add-package-to-package-json --package=lodash --project=my-js-lib
+    ```
+
+- **Install packages for a specific project using pnpm:**
+    ```bash
+    pnpm install primeng @primeng/themes --filter=@loop-space/loop-angular
+    ```
+    *This command uses pnpm to install `primeng` and `@primeng/themes` only within the context of the `@loop-space/loop-angular` project. The `--filter` flag limits the installation to the specified project.*
+
 - [Learn more about this workspace setup and its capabilities](https://nx.dev/getting-started/tutorials/angular-monorepo-tutorial?utm_source=nx_project&amp;utm_medium=readme&amp;utm_campaign=nx_projects) or run `npx nx graph` to visually explore what was created. Now, let's get you up to speed!
 
 
