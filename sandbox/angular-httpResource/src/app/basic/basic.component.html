@@ -1,0 +1,19 @@
+<div class="">
+  <div class="grid gap-4">
+    <h1 class="text-4xl font-bold text-gray-900">
+      Fetch using Zod! <span>{{comments.status()}}</span>
+    </h1>
+    @if(comments.isLoading()) {
+    <p>Loading...</p>
+    }@else {
+    <div class="grid grid-cols-5 gap-4">
+      @for (item of comments.value(); track item.id) {
+      <div class="hover:bg-gray-100 hover:text-black hover:shadow-sm p-2 ">
+        <b class="font-semibold bg-gray-100">{{item.postId}}.{{item.email}}</b>
+        <p class="space-y-4 text-balance"> {{item.name}}</p>
+      </div>
+      }
+    </div>
+    }
+  </div>
+</div>

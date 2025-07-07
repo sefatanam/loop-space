@@ -14,6 +14,7 @@ export const appConfig: ApplicationConfig = {
 		provideHighlightOptions({
 			fullLibraryLoader: () => import('highlight.js'),
 			lineNumbersLoader: () => import('ngx-highlightjs/line-numbers'),
-		})
+		}),
+		provideHttpClient(withFetch())
 	],
 };
